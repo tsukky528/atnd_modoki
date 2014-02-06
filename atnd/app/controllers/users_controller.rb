@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    $joins = Join.all
   end
 
   # GET /users/new
@@ -65,6 +66,7 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

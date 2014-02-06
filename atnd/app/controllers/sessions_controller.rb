@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    
   end
 
   def create
@@ -7,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.oauth(auth)
     session[:user_id] = @user.id
     #redirect_to :controller => 'events', :action => 'index', :id => session[:user_id]
-    redirect_to "/events?id=#{session[:user_id]}"
+    redirect_to "/events"
     #binding.pry
   end
 

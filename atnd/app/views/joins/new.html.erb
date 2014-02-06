@@ -1,0 +1,14 @@
+<%- model_class = Join -%>
+<div class="page-header">
+  <h1>参加フォーム</h1>
+</div>
+<table class="jo" height="100">
+<tr>
+<td>Name : <%= current_user.name %></td>
+</tr>
+<tr>
+<%#= binding.pry %>
+<td>Event : <%= $event.title %></td>
+</tr>
+</table>
+<%= render :partial => 'form' %>

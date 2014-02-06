@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120025409) do
+ActiveRecord::Schema.define(version: 20140127155929) do
 
   create_table "events", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
     t.string   "place"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "date",        limit: nil
+  end
+
+  create_table "joins", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,10 +36,11 @@ ActiveRecord::Schema.define(version: 20140120025409) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
+    t.string   "colum",           limit: nil
+    t.string   "provider",        limit: nil
     t.integer  "uid"
-    t.string   "token"
-    t.string   "secret"
+    t.string   "token",           limit: nil
+    t.string   "secret",          limit: nil
   end
 
 end

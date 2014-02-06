@@ -16,8 +16,12 @@ class ApplicationController < ActionController::Base
       redirect_to "/events"
     end
     #@current_user
-    
+
   end
 
   helper_method :current_user
+
+  def current_event
+    $event = @event.title
+  end
 end

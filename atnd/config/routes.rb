@@ -1,12 +1,17 @@
 Atnd::Application.routes.draw do
+  resources :joins
+
   get "talk/index"
   get 'admin' => 'admin#index'
 
   get 'talk' => 'talk#index'
 
   get 'logout' => 'sessions#destroy'
-  
- 
+
+  #get 'events' => 'joins#insert'
+
+  #get 'joins' => 'events#index'  
+  #get 'join/new' => 'join#show'
 
   resources :users
 

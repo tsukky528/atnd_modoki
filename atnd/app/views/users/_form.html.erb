@@ -1,10 +1,9 @@
 <%= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
-  <%= f.input :password_digest %>
-  <%= f.input :password_confirmation %>
+  <%#= f.input :password_digest %>
+  <%#= f.input :password_confirmation %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                users_path, :class => 'btn' %>
+    <%= link_to "戻る", {:controller => "users", :action => "index"}, :class => 'btn' %>
   </div>
 <% end %>

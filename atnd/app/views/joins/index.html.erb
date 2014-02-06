@@ -1,27 +1,31 @@
-<%- model_class = User -%>
+<%- model_class = Join -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>参加イベントコメント</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%#= model_class.human_attribute_name(:password_digest) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:comment) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
+    <% $joins.each do |join| %>
       <tr>
-        <td><%= link_to user.id, user_path(user) %></td>
-        <td><%= user.name %></td>
-        <td><%= user.password_digest %></td>
+        <td><%= link_to join.id, join_path(join) %></td>
+        <td><%= join.name %></td>
+        <td><%= join.title %></td>
+        <td><%= join.comment %></td>
+        <td><%=l join.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_user_path(user), :class => 'btn btn-mini' %>
+                      edit_join_path(join), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      user_path(user),
+                      join_path(join),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -32,5 +36,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_user_path,
+            new_join_path,
             :class => 'btn btn-primary' %>
