@@ -15,10 +15,15 @@
 <div class="form-actions">
   <%#= link_to t('.back', :default => t("helpers.links.back")),
               joins_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+  <%#= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_join_path($join), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+  <%= link_to "コメントを変える", {:controller => "joins", :action => "edit"}, {:class => 'btn'} %>
+  <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
               join_path($join),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+  <%= link_to "登録取り消し", {:controller => "joins", :action => "destroy"},
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
