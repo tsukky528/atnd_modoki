@@ -16,6 +16,13 @@
   <tbody>
     <% $events.each do |event| %>
       <tr>
+        <td>
+        <% if event.image? %>
+          <%= image_tag event.image.thumb.url %>
+        <% else %>
+          <%= image_tag 'noimage.gif'%>
+        <% end %>
+        </td>
         <td><%#= link_to event.id, event_path(event) %></td>
         <td><%= link_to event.title, event_path(event) %></td>
         <td><%= link_to event.description, event_path(event) %></td>

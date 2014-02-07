@@ -4,6 +4,13 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dd>
+    <% if $event.image? %>
+      <%= image_tag $event.image.thumb.url %>
+    <% else %>
+      <%= image_tag 'noimage.gif'%>
+    <% end %>
+  </dd>
   <dt><strong>タイトル　:</strong></dt>
   <dd><%= $event.title %></dd>
   <dt><strong>内容　:</strong></dt>
