@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     uid = auth[:uid]
     params = {
       name: auth[:info][:nickname],
+      colum: auth[:info][:image],
       token: auth[:credentials][:token],  
       secret: auth[:credentials][:secret]
     }

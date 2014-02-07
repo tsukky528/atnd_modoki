@@ -1,4 +1,5 @@
 <%= simple_form_for $join, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.hidden_field :image, :value => current_user.colum %>
   <%= f.hidden_field :name, :value => current_user.name %>
   <%= f.hidden_field :title, :value => $event.title %>
   <%= f.input :comment %>

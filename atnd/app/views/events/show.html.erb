@@ -4,7 +4,7 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong>ユーザ名　:</strong></dt>
+  <dt><strong>タイトル　:</strong></dt>
   <dd><%= $event.title %></dd>
   <dt><strong>内容　:</strong></dt>
   <dd><%= $event.description %></dd>
@@ -15,7 +15,7 @@
   <dt><strong>参加するユーザー　:</strong></dt>
   <% $joins.each do |join| %>
     <% if join.title == $event.title %>
-    <dd><%= join.name %> : <%= join.comment%></dd>
+    <dd><%= image_tag join.image, :width => '30', :height => '30' %>　<%= join.name %> : <%= join.comment%></dd>
     <% else %>
     <% end %>
   <% end %>
