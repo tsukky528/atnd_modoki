@@ -2,7 +2,9 @@
 <div class="page-header">
   <h1>イベント一覧</h1>
 </div>
-<table class="table table-striped">
+<div class="span12">
+<div class="row">
+  <!--
   <thead>
     <tr>
       <th><%#= model_class.human_attribute_name(:id) %></th>
@@ -13,22 +15,29 @@
       <th><%#=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-  <tbody>
+-->
+
     <% $events.each do |event| %>
+    <li class="span6">
+      <a href="event_path(event)" style="display:block;height:100%;width:100%">
       <tr>
-        <td>
         <% if event.image? %>
-          <%= image_tag event.image.thumb.url %>
+          <td><%= image_tag event.image.thumb.url, :width => '50px', :height => '30px' %></td><br />
         <% else %>
-          <%= image_tag 'noimage.gif'%>
+          <td><%= image_tag 'noimage.jpeg', :width => '50px', :height => '30px' %></td><br />
         <% end %>
-        </td>
-        <td><%#= link_to event.id, event_path(event) %></td>
-        <td><%= link_to event.title, event_path(event) %></td>
-        <td><%= link_to event.description, event_path(event) %></td>
+      </tr>
+      <tr>
+        <td><%= event.description %></td><br />
+      </tr>
+      <tr>
         <td><%= event.date %></td>
+      </tr>
+      <tr>
         <td><%= event.place %></td>
-        <td>
+      </tr>
+    </a>
+    </li>
           <%#= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_event_path(event), :class => 'btn btn-mini' %>
           <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -36,11 +45,9 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
+</div>
+</div>
 
 <%#= link_to t('.new', :default => t("helpers.links.new")),
             new_event_path,

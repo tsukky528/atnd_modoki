@@ -1,5 +1,5 @@
 
-.row-fluid .span3{
+.row-fluid .span4 {
     float: right;
 }
 
@@ -24,7 +24,18 @@ h4 {
 	font-size: 14px;
 }
 
-.span3 li {
+.span4 li {
 	padding: 12px;
 }
 
+.row-fluid{
+	margin-left: auto
+}
+.row-fluid .span12{
+	margin-left: 0;
+}
+
+.row-fluid .span6{
+	margin-left: 0;
+	margin-bottom: 30px;
+}
