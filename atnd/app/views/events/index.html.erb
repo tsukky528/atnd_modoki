@@ -4,27 +4,15 @@
 </div>
 <div class="span12">
 <div class="row">
-  <!--
-  <thead>
-    <tr>
-      <th><%#= model_class.human_attribute_name(:id) %></th>
-      <th>タイトル</th>
-      <th>詳細</th>
-      <th>日時</th>
-      <th>場所</th>
-      <th><%#=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
--->
 
     <% $events.each do |event| %>
     <li class="span6">
-      <a href="/events/<%= event.id %>", style="display:block;height:100%;width:100%">
+      <a href="/events/<%= event.id %>", style="display:block;height:100%;width:80%", background-color="#F0F8FF">
       <tr>
         <% if event.image? %>
-          <td><%= image_tag event.image.thumb.url, :width => '50px', :height => '30px' %></td><br />
+	<td><%= image_tag event.image.thumb.url %></td><br />
         <% else %>
-          <td><%= image_tag 'noimage.jpeg', :width => '50px', :height => '30px' %></td><br />
+          <td><%= image_tag 'noimage.jpeg', :height => '100px' %></td><br />
         <% end %>
       </tr>
       <tr>

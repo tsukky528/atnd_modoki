@@ -207,5 +207,6 @@ ja:
         description: 内容
         date: 日時
         place: 場所
+        image: イメージ画像
       join:
         comment: コメント
