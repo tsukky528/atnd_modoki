@@ -11,7 +11,7 @@
       <a href="/events/<%= event.id %>", style="display:block;height:100%;width:80%", background-color="#F0F8FF">
       <tr>
         <% if event.image? %>
-	<td><%= image_tag event.image.thumb.url %></td><br />
+	        <td><%= image_tag event.image.thumb.url %></td><br />
         <% else %>
           <td><%= image_tag 'noimage.jpeg', :height => '100px' %></td><br />
         <% end %>
