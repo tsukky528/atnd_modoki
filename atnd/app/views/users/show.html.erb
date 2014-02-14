@@ -4,8 +4,8 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong>ユーザー名　:</strong></dt>
-  <dd><%= @user.name %></dd>
+  <dt><strong>ユーザー　:</strong></dt>
+  <dd><%= image_tag @user.colum, :width => '30', :height => '30' %> <%= @user.name %></dd>
   <dt><strong>参加するイベント　:</strong></dt>
   <% $joins.each do |join| %>
     <% if join.name == current_user.name %>
