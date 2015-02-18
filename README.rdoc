@@ -1,0 +1,3 @@
+# atnd_modoki
+Ruby on Rails習得のため
+atnd( https://atnd.org/ )の超簡易版を作成
